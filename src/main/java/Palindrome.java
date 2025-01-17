@@ -12,6 +12,16 @@ public class Palindrome {
      * @return true if str is a palindrome, false otherwise.
      */
     public boolean pal(String str){
-        return false;
+        char[] copyStr = str.toCharArray();
+        int left = 0;
+        int right = copyStr.length - 1;
+        for (char c : copyStr) {
+            if(copyStr[left] != copyStr[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 }
